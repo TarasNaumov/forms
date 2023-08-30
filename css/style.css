@@ -1,0 +1,676 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+select {
+    appearance: none;
+}
+
+html {
+    font-size: 1px;
+}
+
+body {
+    font-size: 14rem;
+}
+
+.df {
+    display: flex;
+}
+
+.df-sb {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper {
+    margin: auto;
+    max-width: 960px;
+}
+
+.header-title {
+    width: 100%;
+    min-height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 30rem;
+    color: #1f222c;
+    font-weight: 700;
+    font-family: "Roboto Slab";
+    text-align: center;
+}
+
+.easy-form {
+    width: 331px;
+}
+
+h2 {
+    font-size: 20rem;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    color: #b3b3b3;
+    font-weight: 700;
+    font-family: "Roboto";
+    margin-bottom: 30px;
+}
+
+.easy-form input {
+    width: 100%;
+    padding: 14px 17px;
+    border-radius: 3px;
+    margin-bottom: 7px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.easy-form input:focus,
+.easy-form textarea:focus {
+    font-size: 14rem;
+    color: #1f222c;
+    font-family: "Roboto";
+    filter: drop-shadow(0 0 2.5px rgba(62, 106, 255, 0.55));
+    border: 1px solid #3e6aff;
+}
+
+.easy-form select {
+    background: transparent;
+    width: 100%;
+    margin-bottom: 9px;
+    padding: 14px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    appearance: none;
+}
+
+.arow {
+    position: relative;
+}
+
+.arow::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-25%);
+    border: 5px solid transparent;
+    border-top-color: #000;
+}
+
+.easy-form select::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    right: 14px;
+    border-top: 5px solid #1f222c;
+    transform: translate(-50%);
+}
+
+.easy-form textarea {
+    width: 100%;
+    min-height: 131px;
+    max-height: 260px;
+    padding: 17px;
+    outline: none;
+    resize: vertical;
+}
+
+.easy-form textarea::placeholder,
+.easy-form input::placeholder {
+    font-size: 14rem;
+    color: #b3b3b3;
+    font-family: "Roboto";
+}
+
+.easy-form input[type="submit"] {
+    border-radius: 3px;
+    background-color: #12d661;
+    transition: 0.3s;
+    font-size: 14rem;
+    color: #fff;
+    font-weight: 700;
+    font-family: "Roboto";
+    text-align: center;
+}
+
+.easy-form input[type="submit"]:hover {
+    background-color: #07be51;
+    filter: drop-shadow(0px 2px 2.5px rgba(8, 118, 52, 0.35));
+}
+
+.easy-form {
+    margin-bottom: 50px;
+}
+
+hr {
+    border-top: 1px solid #dcdcde;
+    margin-bottom: 50px;
+}
+
+.elements label {
+    font-size: 14rem;
+    color: #1f222c;
+    font-family: "Roboto";
+}
+
+.style-checkbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.style-checkbox-container {
+    width: 60%;
+}
+
+.delivery,
+.news-checkbox,
+.style-checkbox-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+}
+
+.delivery label {
+    color: #1f222c;
+    font-family: "Roboto";
+}
+
+.wrapper .disabled {
+    color: #b3b3b3;
+    font-family: "Roboto";
+}
+
+.news-checkbox input[disabled]+label {
+    color: #b3b3b3;
+    font-family: "Roboto";
+}
+
+.status-date {
+    padding: 20px;
+    min-width: 474px;
+    border-radius: 3px;
+    background-color: #f7f7f7;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 50px;
+}
+
+.status-date h3 {
+    font-size: 14rem;
+    color: #b3b3b3;
+    font-weight: 700;
+    font-family: "Roboto";
+}
+
+.status {
+    width: 100%;
+    margin-bottom: 14px;
+    column-gap: 33px;
+}
+
+.elements input[type="checkbox"],
+.table-application table input[type="checkbox"] {
+    display: none;
+}
+
+.status label,
+.news-checkbox label,
+.table-application table tr:nth-child(5) label,
+.fixed_form form input[type="checkbox"]+label {
+    position: relative;
+    padding-left: 25px;
+}
+
+.status label::before,
+.news-checkbox label::before,
+.table-application table tr:nth-child(5) label::before,
+.fixed_form form input[type="checkbox"]+label::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.status input:checked+label::before,
+.news-checkbox input:checked+label::before,
+.table-application table tr:nth-child(5):checked+label::before .fixed_form form input[type="checkbox"]:checked+label {
+    border: 1px solid #3e6aff;
+}
+
+.status input:checked+label::after,
+.news-checkbox input:checked+label::after,
+.table-application table tr:nth-child(5) input:checked+label::after,
+.fixed_form form input[type="checkbox"]:checked+label::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    width: 7px;
+    height: 4px;
+    transform: rotate(-45deg);
+    border: 2px solid #244dd7;
+    border-top: none;
+    border-right: none;
+}
+
+.date-form {
+    align-items: center;
+    column-gap: 45px;
+}
+
+.date-form input[type="date"] {
+    font-size: 14rem;
+    color: #1f222c;
+    font-family: "Roboto";
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+}
+
+.gender {
+    flex-direction: column;
+    row-gap: 70px;
+    padding: 25px 0;
+    margin-bottom: 50px;
+}
+
+.gender input,
+.style-checkbox-container input {
+    display: none;
+}
+
+.gender input:checked+label {
+    font-size: 16rem;
+    color: #3e6aff;
+    font-weight: 700;
+    font-family: "Roboto";
+}
+
+.gender label {
+    position: relative;
+    padding: 25px 0px 25px 83px;
+    font-size: 16rem;
+    color: #1f222c;
+    font-weight: 700;
+    font-family: "Roboto";
+}
+
+.gender label:before {
+    content: '';
+    width: 71px;
+    height: 71px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background: url("../img/forms-sprite.png");
+}
+
+.gender label[for="woman"]:before {
+    background-position: -72px 0;
+}
+
+.gender input:checked+label[for="man"]:before {
+    background-position: 0 -72px;
+}
+
+.gender input:checked+label[for="woman"]:before {
+    background-position: -72px -73px;
+}
+
+.style-checkbox-container label {
+    position: relative;
+    padding-left: 65px;
+    color: #1f222c;
+    font-family: "Roboto";
+}
+
+.style-checkbox-container {
+    padding-top: 10px;
+    row-gap: 31px;
+}
+
+.style-checkbox-container label::before {
+    content: '';
+    width: 46px;
+    height: 26px;
+    border-radius: 12px;
+    background-color: #cfcfd1;
+    transform: translateY(-50%);
+    transition: 0.5s;
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+.style-checkbox-container label::after {
+    content: '';
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    transition: 0.3s;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 2px;
+}
+
+.style-checkbox-container input:checked+label::before {
+    background-color: #3e6aff;
+}
+
+.style-checkbox-container input:checked+label::after {
+    left: 22px;
+}
+
+.table-form>p {
+    font-size: 18rem;
+    color: #1f222c;
+    font-weight: 700;
+    font-family: "Roboto";
+    margin-bottom: 25px;
+}
+
+.table-form table tr:nth-child(4) td:last-child label input {
+    margin-right: 9px;
+}
+
+.table-form table tr:nth-child(4) td:last-child label:first-child {
+    margin-right: 23px;
+}
+
+.table-form table tr td:first-child {
+    width: 30%;
+    font-size: 14rem;
+    color: #1f222c;
+    ;
+    font-family: "Roboto";
+}
+
+.table-form table input[type="file"] {
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.table-form table label[for="file"] {
+    display: inline-block;
+    width: 50%;
+    padding: 12px;
+    margin-bottom: 14px;
+    border-radius: 3px;
+    transition: 0.3s;
+    background-color: #3e6aff;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 700;
+    font-family: "Roboto";
+    text-align: center;
+}
+
+.table-form table label[for="file"]:hover {
+    filter: drop-shadow(0px 2px 2.5px rgba(15, 40, 126, 0.35));
+    background-color: #2857f4;
+}
+
+.table-form table tr:nth-child(6) td:first-child {
+    vertical-align: top;
+}
+
+.table-form table input[type="text"],
+.table-form table input[type="password"],
+.table-form table select,
+.table-form table textarea {
+    outline: none;
+    width: 100%;
+    padding: 10px;
+}
+
+.table-form table input[type="text"]:focus,
+.table-form table input[type="password"]:focus,
+.table-form table select:focus,
+.table-form table textarea:focus {
+    filter: drop-shadow(0 0 2.5px rgba(62, 106, 255, 0.55));
+    background-color: #ffffff;
+    border: 1px solid #3e6aff;
+}
+
+.table-form table textarea {
+    min-height: 131px;
+    max-height: 260px;
+    padding: 17px;
+    resize: vertical;
+}
+
+.table-form table tr input,
+.table-form table tr select {
+    margin-bottom: 14px;
+}
+
+.table-form table tr input[type="submit"] {
+    font-size: 14rem;
+    color: #fff;
+    font-weight: 700;
+    font-family: "Roboto";
+    text-align: center;
+    transition: 0.3s;
+    width: 100%;
+    padding: 13px;
+    border-radius: 3px;
+    border: none;
+    background-color: #12d661;
+}
+
+.table-form table tr input[type="submit"]:hover {
+    filter: drop-shadow(0px 2px 2.5px rgba(8, 118, 52, 0.35));
+    background-color: #07be51;
+}
+
+.table-application>p {
+    font-size: 18rem;
+    color: #1f222c;
+    font-weight: 700;
+    font-family: "Roboto";
+    margin-bottom: 22px;
+}
+
+.table-application table {
+    border-spacing: 10px 20px;
+    margin: 0 -10px;
+}
+
+.table-application hr {
+    margin: 0;
+}
+
+.table-application td {
+    position: relative;
+    padding-top: 20px;
+}
+
+.table-application form input:not([type="submit"]):not([type="checkbox"]),
+.table-application form select {
+    padding: 12px 17px;
+    width: 100%;
+}
+
+.i_accept_the_rules {
+    font-size: 14px;
+    color: #1f222c;
+    font-family: "Roboto";
+}
+
+.table-application form label:not([for="i_accept_the_rules"]) {
+    font-size: 13rem;
+    color: #b3b3b3;
+    font-family: "Roboto";
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.table-form-button a {
+    display: inline-block;
+    padding: 13px;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #85868d;
+    text-decoration: none;
+    font-size: 14rem;
+    color: #6e6f77;
+    font-weight: 700;
+    font-family: "Roboto";
+    text-align: center;
+    transition: 0.3s;
+}
+
+.table-form-button a:hover {
+    background-color: #85868d;
+    color: #fff;
+}
+
+.table-form-button td:nth-child(3) {
+    text-align: right;
+}
+
+.table-form-button input[type="submit"] {
+    display: inline-block;
+    border-radius: 3px;
+    background-color: #12d661;
+    padding: 10px;
+    border: none;
+    font-size: 14rem;
+    color: #fff;
+    font-weight: 700;
+    font-family: "Roboto";
+    text-align: center;
+    transition: 0.3s;
+}
+
+.table-form-button input[type="submit"]:hover {
+    filter: drop-shadow(0px 2px 2.5px rgba(8, 118, 52, 0.35));
+    background-color: #07be51;
+}
+
+.select-arow::after {
+    content: '';
+    width: 1px;
+    height: 19px;
+    background-color: #ccc;
+    position: absolute;
+    top: 50%;
+    right: 35px;
+    transform: translateY(-50%);
+}
+
+.fixed_form form {
+    width: 311px;
+    padding: 27px;
+    border-radius: 5px;
+    filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.15));
+    background-color: #fafafa;
+    border: 1px solid #e6e6e6;
+}
+
+.fixed_form form input[type="text"],
+.fixed_form form input[type="password"] {
+    padding: 8px 15px;
+    margin-bottom: 12px;
+    font-size: 14rem;
+    color: #1f222c;
+    font-family: "Roboto";
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.fixed_form form input[type="text"]:focus,
+.fixed_form form input[type="password"]:focus {
+    filter: drop-shadow(0 0 2.5px rgba(62, 106, 255, 0.55));
+    border: 1px solid #3e6aff;
+}
+
+.fixed_form form div {
+    padding-top: 20px;
+    position: relative;
+}
+
+.fixed_form form div label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 13rem;
+    color: #b3b3b3;
+    font-family: "Roboto";
+}
+
+.fixed_form form input:not([type="checkbox"]) {
+    width: 100%;
+}
+
+.fixed_form form input[type="submit"] {
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #12d661;
+    transition: 0.3s;
+    font-size: 14rem;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+}
+
+.fixed_form form input[type="submit"]:hover {
+    filter: drop-shadow(0px 2px 2.5px rgba(8, 118, 52, 0.35));
+    background-color: #07be51;
+}
+
+.fixed_form form a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 13rem;
+    color: #3e6aff;
+}
+
+.fixed_form form a:hover {
+    text-decoration: underline;
+}
+
+.fixed_form form input[type="checkbox"] {
+    display: none;
+}
+
+.fixed_form {
+    position: fixed;
+    top: 175px;
+    right: 100px;
+}
+
+.fixed_form form {
+    position: relative;
+}
+
+.fixed_form form span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #949494;
+    font-weight: bold;
+}
