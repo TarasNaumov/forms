@@ -1,0 +1,235 @@
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="css/styles.css")
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        title Форми
+    body 
+        include helpers/vars.pug
+        include helpers/mixins.pug
+
+        include components/header.pug
+
+        main
+            .wrapper
+                section.elements-section
+                    .elements-container
+                        p.form-name 02. елементи
+                        form(action="index.php", method="post").elements-form
+                            .delivery-container
+
+                                .delivery
+                                    label.flex-input
+                                        input(type="radio", name="delivery")
+                                        p Нова Пошта  
+
+                                    label.flex-input
+                                        input(type="radio", name="delivery")
+                                        p Кур’єр
+
+                                    label.flex-input.disable
+                                        input(type="radio", name="delivery" disabled)
+                                        p Самовивіз
+
+                                .news-checkbox
+                                    div                                
+                                        input(type="checkbox", name="terms" id="terms")
+                                        label(for="terms").flex-input.style-checkbox
+                                            p Прочитав умови договору  
+                                    div
+                                        input(type="checkbox", name="pdvCompliant" id="pdvCompliant")
+                                        label(for="pdvCompliant").flex-input.style-checkbox
+                                            p Згідний з ПДВ 9%
+                                    div
+                                        input(type="checkbox", name="newsOnEmail" id="newsOnEmail" disabled)
+                                        label(for="newsOnEmail").flex-input.disable.style-checkbox
+                                            p Отримувати новини на ел. пошту
+
+                            .date-container
+                                div.status
+                                    div.disable
+                                        p Статус
+                                    div
+                                        input(type="checkbox", name="news" id="news")
+                                        label(for="news").flex-input.style-checkbox
+                                            p Новинки  
+                                    div 
+                                        input(type="checkbox", name="action" id="action")
+                                        label(for="action").flex-input.style-checkbox
+                                            p Акційні товари
+                                    div 
+                                        input(type="checkbox", name="sale" id="sale")
+                                        label(for="sale").flex-input.style-checkbox
+                                            p Розпродаж
+                                div.date
+                                    div.disable
+                                        p Дата
+                                    div 
+                                        input(type="date", name="date")
+                hr
+
+                section.style-checkbox-section
+                    p.form-name 03. стилізовані чекбокси 
+                    form(action="index.php", method="post").style-checkbox-form
+                        .gender
+
+                            div.boy
+                                input(type="radio", name="gender" id="boy")
+                                label(for="boy") 
+                                    p Чоловік
+
+                            div.girl
+                                input(type="radio", name="gender" id="girl")
+                                label(for="girl") 
+                                    p Жінка
+
+                        .style-checkbox-container
+                            div 
+                                input(type="checkbox", name="get_news" id="get_news")
+                                label(for="get_news") 
+                                    p Отримувати новини
+                            div 
+                                input(type="checkbox", name="shopping" id="shopping")
+                                label(for="shopping") 
+                                    p Купити додому ковбаси
+                            div 
+                                input(type="checkbox", name="turn ligt" id="turn ligt")
+                                label(for="turn ligt") 
+                                    p Включити світло
+
+                hr
+
+                section.table-form-section
+                    p.form-name 04. форма таблицею
+                    p.duty Заповніть усі необхідні поля
+                    table
+                        tr
+                            td 
+                                label(for="table-name") 
+                                    p ФІО:
+                            td 
+                                input(type="text", name="table-name" id="table-name" placeholder="Введіть ім’я")
+                        tr
+                            td 
+                                label(for="table-password") 
+                                    p Пароль:
+                            td 
+                                input(type="text", name="table-name" id="table-password" placeholder="Введіть не менше 6 символів" minlength="6")
+                        tr
+                            td 
+                                label(for="table-city") 
+                                    p Місто:
+                            td
+                                label.arow
+                                    select(name="city" id="table-city").input-style.arow
+                                        option(disabled) Ваше місто
+                                        option(value="kyiv") Київ
+                                        option(value="Lviv") Львів
+                                        option(value="Khmelnytskyi") Хмельницький
+                        tr
+                            td 
+                                label(for="table-boy") 
+                                    p Стать:
+                            td.table-gender-td
+                                label.table-gender
+                                    input(type="radio", name="table-gender" id="table-boy")
+                                    p Чоловік
+
+                                label.table-gender
+                                    input(type="radio", name="table-gender" id="table-girl")
+                                    p Жінка
+                        tr
+                            td.table-file
+                                label(for="table-foto") 
+                                    p Фото:
+                            td.table-file
+                                input(type="file", name="table-foto" id="table-foto")
+                                label(for="table-foto") Виберіть файл
+                        tr.table-textarea
+                            td 
+                                label(for="comments") 
+                                    p Коментарій:
+                            td 
+                                textarea(name="comments", placeholder="Введіть текст повідомлення", cols="30", rows="10" id="comments")
+                        tr 
+                            td
+                            td 
+                                input(type="submit", value="Зареєструватися")
+                hr
+
+                section.big-table-form
+                    p.form-name 05. форма таблицею
+                    p.design Оформлення заявки
+                    form(action="index.php", method="post") 
+                        table
+                            thead
+                                tr
+                                    td
+                                        label(for="name-registration") 
+                                            p Прізвище та ім’я
+                                        input(type="text", name="name-registration" id="name-registration")
+                                    td
+                                        label(for="email-registration") 
+                                            p Ел. пошта
+                                        input(type="text", name="email-registration" id="email-registration")
+                                    td
+                                        label(for="table-phone") 
+                                            p Телефон
+                                        input(type="text", name="table-phone" id="table-phone")
+                                tr.hr-tr
+                                    td(colspan="3")
+                                        hr
+                            tbody 
+                                tr
+                                    td
+                                        label(for="country") 
+                                            p Країна
+                                        label.arow.line
+                                            select(name="country" id="country").input-style.arow
+                                                option(value="Indonesia") Індонезія
+                                                option(value="Ukraine") Україна
+                                                option(value="Brazil") Бразилія
+                                                option(value="Germany") Німетчина
+                                        
+                                    td(colspan="2")
+                                        label(for="address")
+                                            p Адреса
+                                        input(type="text", name="address")
+                                        
+                                tr
+                                    td
+                                        label(for="name-registration") 
+                                            p Місто
+                                        input(type="text", name="name-registration" id="name-registration")
+                                    td
+                                        label(for="email-registration") 
+                                            p Будинок
+                                        input(type="text", name="email-registration" id="email-registration")
+                                    td
+                                        label(for="table-phone") 
+                                            p Поштовий індекс
+                                        input(type="text", name="table-phone" id="table-phone")
+                            tfoot
+                                tr
+                                    td(colspan="3")
+                                        input(type="checkbox", name="rules" id="rules")
+                                        label(for="rules").flex-input.style-checkbox
+                                            p Я погоджуюсь з правилами оплати та доставки товару 
+
+                                tr 
+                                    td(colspan="3")
+                                        hr
+
+                                tr
+                                    td 
+                                        a(href="#").table-button Повернутися назад
+                                    td(colspan="2")
+                                        button(type="submit").table-submit Оформити покупку
+
+                    
+        include components/footer.pug

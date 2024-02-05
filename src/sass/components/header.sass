@@ -1,0 +1,95 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html
+    font-size: 1px
+
+body
+    font-size: 14px
+
+.wrapper
+    margin: auto
+    width: 990px
+
+.title
+    padding: 77px 0 70px 0
+
+h1
+    font-size: 30rem
+    color: #1f222c
+    font-weight: 700
+    font-family: "Roboto Slab"
+    text-align: center
+
+.form-name
+    font-size: 20rem
+    letter-spacing: 0px
+    text-transform: uppercase
+    color: #b3b3b3
+    font-weight: 700
+    font-family: "Roboto"
+
+.easy-form-container
+    .form-name
+        margin-bottom: 30px
+
+.easy-form
+    display: flex
+    flex-direction: column
+    gap: 10px
+    margin-bottom: 50px
+    width: 330px
+
+    input,
+    select,
+    textarea
+        width: 100%
+        padding: 14px
+
+    textarea
+        resize: vertical
+        min-height: 130px
+        height: 130px
+        max-height: 260px
+
+    .register-button
+        width: 100%
+
+.input-style
+    outline: none
+    border-radius: 3px
+    background-color: transparent
+    border: 1px solid #ccc
+
+    &:focus
+        filter: drop-shadow(0 0 2.5px rgba(62,106,255,0.55))
+        background-color: transparent
+        border: 1px solid #3e6aff
+
+    &::placeholder
+        font-size: 14rem
+        color: #b3b3b3
+        font-family: "Roboto"
+
+.register-button
+    border: none
+    border-radius: 3px
+    padding: 16px 0
+    font-size: 14rem
+    color: #fff
+    font-weight: 700
+    font-family: "Roboto"
+    text-align: center
+    background-color: #12d661
+    transition: 0.2s
+
+    &:hover
+        filter: drop-shadow(0px 2px 2.5px rgba(8,118,52,0.35))
+        background-color: #07be51
+
+hr
+    border: none
+    border: 1px solid #dcdcde
+    margin-bottom: 50px
